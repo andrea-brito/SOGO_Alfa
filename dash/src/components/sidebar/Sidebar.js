@@ -3,21 +3,13 @@ import "./Sidebar.css"
 import logo from "../../assets/alfalogo.png"
 import {faTimes,
          faHome,
-         faBuilding,
-         faUserSecret,
-         faWrench,
-         faArchive,
-         faHandshake,
-         faQuestion,
-         faSignOutAlt,
-         faCalendarCheck,
-         faPowerOff,
-         faMoneyBill,
-         faBriefcase,
          faUserCog,
-         faFileContract
+         faFileContract,
+         faSignal
         } from '@fortawesome/free-solid-svg-icons'
-import { faFile } from '@fortawesome/free-regular-svg-icons';
+import { faClipboard, faFile } from '@fortawesome/free-regular-svg-icons';
+
+import { Link } from 'react-router-dom';
 
 const Sidebar = ( {sidebarOpen, closeSidebar}) => {
     return(
@@ -36,31 +28,32 @@ const Sidebar = ( {sidebarOpen, closeSidebar}) => {
                     <i>
                         <FontAwesomeIcon icon={faHome}/>
                     </i>
-                    <a href="#">Dashboard</a>
+                    <Link to='/'>Dashboard</Link>
                 </div>
                 <div className="sidebar__link">
                     <i>
                         <FontAwesomeIcon icon={faUserCog}/>
                     </i>
-                    <a href="#">Cadastro de Pessoas</a>
+                    <Link to='/peoples'>Cadastro de Pessoas</Link>
+                    
                 </div>
                 <div className="sidebar__link">
                     <i>
                         <FontAwesomeIcon icon={faFileContract}/>
                     </i>
-                    <a href="#">Cadastro de contratos</a>
+                    <Link to='/contract'>Cadastro de contratos</Link>
                 </div>
                 <div className="sidebar__link">
                     <i>
-                        <FontAwesomeIcon icon={faWrench}/>
+                        <FontAwesomeIcon icon={faClipboard}/>
                     </i>
                     <a href="#">Lista de contratos</a>
                 </div>
                 <div className="sidebar__link">
                     <i>
-                        <FontAwesomeIcon icon={faArchive}/>
+                        <FontAwesomeIcon icon={faSignal}/>
                     </i>
-                    <a href="#">Estatísticas</a>
+                    <Link to='/estatistica'>Estatísticas</Link>
                 </div>                
             </div>
         </div>
